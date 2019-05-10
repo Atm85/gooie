@@ -3,6 +3,7 @@
 namespace atom\gui\type;
 
 use atom\gui\elements\Button;
+use Exception;
 use pocketmine\Player;
 
 class SimpleGui extends Type{
@@ -23,8 +24,14 @@ class SimpleGui extends Type{
         $this->content = $content;
     }
 
-    public function addButton(string $text){
+    public function addButton(string $text, string $path = null){
         $button = new Button($text);
+        if ($path !== null) {
+            try {
+                $button->addImage(Button::IMAGE_TYPE_URL, $path);
+            } catch (Exception $e) {
+            }
+        }
         $this->buttons[] = $button;
     }
 
