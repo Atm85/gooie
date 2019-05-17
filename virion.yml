@@ -3,4 +3,4 @@ version: 1.0.1
 antigen: atom\gui
 api: ['3.0.0','4.0.0']
 php: [7.2]
-author: iAtomPlaza
+author: Atom
